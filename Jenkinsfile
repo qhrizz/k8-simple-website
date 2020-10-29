@@ -18,9 +18,6 @@ spec:
     command:
     - /busybox/cat
     tty: true
-    env:
-    - name: JENKINS_URL
-    value: "http://jenkins-jnlp.qnet.qhrizz.se:50000"
 """
   ) {
 
