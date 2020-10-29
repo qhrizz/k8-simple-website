@@ -23,10 +23,10 @@ spec:
 
   node(POD_LABEL) {
     stage('Build with Kaniko') {
-      git 'https://gitlab.qd.se/christian.tamm/simple-website.git'
+      git 'https://github.com/qhrizz/k8-simple-website.git'
       container('kaniko') {
-        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=192.168.0.241:5000/repo1/simplewebsite'
-		kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
+        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=registry.qnet.qhrizz.se:5000/repo1/simplewebsite'
+	kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
       }
     }
   }
