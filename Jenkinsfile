@@ -25,7 +25,7 @@ spec:
     stage('Build with Kaniko') {
       git 'https://github.com/qhrizz/k8-simple-website.git'
       container('kaniko') {
-        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=registry.qnet.qhrizz.se:5000/repo1/simplewebsite'
+        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=registry.qnet.qhrizz.se:5000/repo1/simplewebsite:latest'
 	kubernetesDeploy(configs: "myweb.yaml", kubeconfigId: "mykubeconfig")
       }
     }
