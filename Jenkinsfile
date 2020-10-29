@@ -20,9 +20,7 @@ spec:
     tty: true
     env:
     - name: JENKINS_URL
-    value: http://jenkins-jnlp.qnet.qhrizz.se
-    - name: JENKINS_DIRECT_CONNECTION
-    value: http://jenkins-jnlp.qnet.qhrizz.se:50000
+    value: "http://jenkins-jnlp.qnet.qhrizz.se:50000"
 """
   ) {
 
